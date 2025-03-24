@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babies&Todd's Day Care</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo bounce">
+            <a href="index.html">
+                <img src="logo.jpg" alt="Babies&Todd's" width="150">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="programs.html">Programs</a>
+            <a href="games.html">Games</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="portal.html" class="portal-btn">Parent Portal</a>
+            <a href="admin/login.html" class="admin-btn">Admin Login</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <i class="fas fa-bars" id="menuIcon"></i>
+        </button>
+    </nav>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1 class="floating">Welcome to Babies&Todd's</h1>
+            <p class="fade-in">Where Every Child's Journey Begins!</p>
+            <button class="cta-button" id="enrollButton">Enroll Now</button>
+        </div>
+        <div class="floating-objects">
+            <img src="img/1.png" class="float-item" alt="toy">
+            <img src="img/2.png" class="float-item" alt="toy">
+            <img src="img/3.png" class="float-item" alt="toy">
+        </div>
+    </section>
+
+    <section id="programs" class="programs-section">
+        <h2>Our Programs</h2>
+        <div class="program-cards">
+            <div class="program-card">
+                <i class="fas fa-baby bounce"></i>
+                <h3>Infants</h3>
+                <p>0-12 months</p>
+                <button class="learn-more">Learn More</button>
+            </div>
+            <div class="program-card">
+                <i class="fas fa-child bounce"></i>
+                <h3>Toddlers</h3>
+                <p>1-3 years</p>
+                <button class="learn-more">Learn More</button>
+            </div>
+            <div class="program-card">
+                <i class="fas fa-school bounce"></i>
+                <h3>Preschool</h3>
+                <p>3-5 years</p>
+                <button class="learn-more">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add more sections as needed -->
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📞 (123) 456-7890</p>
+                <p>📧 info@babiesandtodd.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook bounce"></i></a>
+                    <a href="#"><i class="fab fa-instagram bounce"></i></a>
+                    <a href="#"><i class="fab fa-twitter bounce"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the necessary elements
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const menuIcon = document.getElementById('menuIcon');
+
+        if (mobileMenuBtn && navLinks && menuIcon) {
+            // Toggle menu when button is clicked
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent click from bubbling to document
+                navLinks.classList.toggle('active');
+                
+                // Toggle menu icon
+                if (navLinks.classList.contains('active')) {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                } else {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileMenuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+
+            // Close menu when a link is clicked
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                });
+            });
+        }
+    });
+    </script>
+
+    <!-- Add this modal HTML just before the closing body tag -->
+    <div id="enrollmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Enrollment Form</h2>
+            
+            <form id="enrollmentForm" class="enrollment-form">
+                <!-- Child's Information -->
+                <div class="form-section">
+                    <h3>Child's Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="childName">Full Name*</label>
+                            <input type="text" id="childName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="childDob">Date of Birth*</label>
+                            <input type="date" id="childDob" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="childGender">Gender*</label>
+                            <select id="childGender" required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mother's Information -->
+                <div class="form-section">
+                    <h3>Mother's Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="motherName">Full Name*</label>
+                            <input type="text" id="motherName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="motherPhone">Phone Number*</label>
+                            <input type="tel" id="motherPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="motherEmail">Email*</label>
+                            <input type="email" id="motherEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="motherOccupation">Occupation*</label>
+                            <input type="text" id="motherOccupation" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Father's Information -->
+                <div class="form-section">
+                    <h3>Father's Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fatherName">Full Name*</label>
+                            <input type="text" id="fatherName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fatherPhone">Phone Number*</label>
+                            <input type="tel" id="fatherPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fatherEmail">Email*</label>
+                            <input type="email" id="fatherEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fatherOccupation">Occupation*</label>
+                            <input type="text" id="fatherOccupation" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Required Documents -->
+                <div class="form-section">
+                    <h3>Required Documents</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="birthCertificate">Birth Certificate*</label>
+                            <input type="file" id="birthCertificate" accept=".pdf,.jpg,.png" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="proofOfPayment">Proof of Payment*</label>
+                            <input type="file" id="proofOfPayment" accept=".pdf,.jpg,.png" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Contact -->
+                <div class="form-section">
+                    <h3>Emergency Contact</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="emergencyName">Contact Name*</label>
+                            <input type="text" id="emergencyName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="emergencyPhone">Contact Phone*</label>
+                            <input type="tel" id="emergencyPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="emergencyRelation">Relationship to Child*</label>
+                            <input type="text" id="emergencyRelation" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Submit Enrollment</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+.games-container {
+    padding: 100px 5% 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.games-container h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.game-section {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.game-section h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* ABC Game Styles */
+.letter-display {
+    text-align: center;
+    font-size: 8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.controls button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.letter-image {
+    text-align: center;
+}
+
+.letter-image img {
+    max-width: 300px;
+    height: auto;
+}
+
+/* Memory Game Styles - Updated for larger emojis */
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.memory-card {
+    aspect-ratio: 1;
+    background: var(--primary-color);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 4rem; /* Larger emoji size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.memory-card:hover {
+    transform: scale(1.05);
+}
+
+.memory-card.flipped {
+    background: white;
+    transform: rotateY(180deg);
+}
+
+/* Add animation for card flip */
+@keyframes flipIn {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(180deg);
+    }
+}
+
+.memory-card.flipped {
+    animation: flipIn 0.3s ease forwards;
+}
+
+/* Color Game Styles */
+.color-display {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#colorBox {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+#colorName {
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .letter-display {
+        font-size: 6rem;
+    }
+
+    .letter-image img {
+        max-width: 200px;
+    }
+
+    .memory-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .controls button {
+        width: 100%;
+        max-width: 200px;
+    }
+} 

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Games - Babies&Todd's Day Care</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="games-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <!-- Same navigation as index.html -->
+        <div class="logo bounce">
+            <a href="index.html">
+                <img src="logo.jpg" alt="Babies&Todd's" width="150">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="programs.html">Programs</a>
+            <a href="games.html" class="active">Games</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="portal.html" class="portal-btn">Parent Portal</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <i class="fas fa-bars" id="menuIcon"></i>
+        </button>
+    </nav>
+
+    <div class="games-container">
+        <h1>Fun Learning Games</h1>
+        
+        <!-- ABC Game -->
+        <div class="game-section" id="abcGame">
+            <h2>ABC Learning</h2>
+            <div class="game-area">
+                <div class="letter-display">
+                    <span id="currentLetter">A</span>
+                </div>
+                <div class="controls">
+                    <button id="prevLetter">Previous</button>
+                    <button id="playSound">Play Sound</button>
+                    <button id="nextLetter">Next</button>
+                </div>
+                <div class="letter-image">
+                    <img id="letterImage" src="images/games/A.png" alt="Letter A">
+                </div>
+            </div>
+        </div>
+
+        <!-- Memory Card Game -->
+        <div class="game-section" id="memoryGame">
+            <h2>Memory Match</h2>
+            <div class="game-area">
+                <div class="memory-grid" id="memoryGrid"></div>
+                <button id="restartMemory">Restart Game</button>
+            </div>
+        </div>
+
+        <!-- Color Learning Game -->
+        <div class="game-section" id="colorGame">
+            <h2>Color Learning</h2>
+            <div class="game-area">
+                <div class="color-display">
+                    <div id="colorBox"></div>
+                    <p id="colorName">Red</p>
+                </div>
+                <div class="controls">
+                    <button id="prevColor">Previous</button>
+                    <button id="playColorSound">Play Sound</button>
+                    <button id="nextColor">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="games.js"></script>
+</body>
+</html> 
