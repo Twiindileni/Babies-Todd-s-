@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Babies&Todd's Day Care</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="admin-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="admin-sidebar">
+            <div class="admin-logo">
+                <img src="logo.jpg" alt="Babies&Todd's" width="150">
+            </div>
+            <button class="mobile-menu-trigger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="admin-menu">
+                <li class="active"><a href="#dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#children"><i class="fas fa-child"></i> Children</a></li>
+                <li><a href="#parents"><i class="fas fa-users"></i> Parents</a></li>
+                <li><a href="#staff"><i class="fas fa-user-tie"></i> Staff</a></li>
+                <li><a href="#programs"><i class="fas fa-book"></i> Programs</a></li>
+                <li><a href="#payments"><i class="fas fa-dollar-sign"></i> Payments</a></li>
+                <li><a href="#reports"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </nav>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <div class="admin-search">
+                    <input type="search" placeholder="Search...">
+                </div>
+                <div class="admin-profile">
+                    <span>Welcome, Admin</span>
+                    <a href="login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="dashboard-cards">
+                    <div class="dash-card">
+                        <i class="fas fa-child"></i>
+                        <div class="card-info">
+                            <h3>Total Children</h3>
+                            <p>45</p>
+                        </div>
+                    </div>
+                    <div class="dash-card">
+                        <i class="fas fa-users"></i>
+                        <div class="card-info">
+                            <h3>Total Parents</h3>
+                            <p>38</p>
+                        </div>
+                    </div>
+                    <div class="dash-card">
+                        <i class="fas fa-user-tie"></i>
+                        <div class="card-info">
+                            <h3>Staff Members</h3>
+                            <p>12</p>
+                        </div>
+                    </div>
+                    <div class="dash-card">
+                        <i class="fas fa-dollar-sign"></i>
+                        <div class="card-info">
+                            <h3>Monthly Revenue</h3>
+                            <p>$24,500</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activities Section -->
+                <div class="recent-activities">
+                    <h2>Recent Activities</h2>
+                    <div class="activity-list">
+                        <!-- Activity items will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const mobileTrigger = document.querySelector('.mobile-menu-trigger');
+        const adminMenu = document.querySelector('.admin-menu');
+        
+        mobileTrigger.addEventListener('click', () => {
+            adminMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 
